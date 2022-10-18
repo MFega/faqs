@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+/* ### Text
+
+- Very dark desaturated blue: hsl(238, 29%, 16%)
+- Soft red: hsl(14, 88%, 65%)
+
+#### Gradient
+
+Background gradient:
+
+- Soft violet: hsl(273, 75%, 66%)
+- Soft blue: hsl(240, 73%, 65%)
+
+### Neutral
+
+#### Text
+
+- Very dark grayish blue:c
+- Dark grayish blue: hsl(240, 6%, 50%)
+
+#### Dividers
+
+- Light grayish blue: hsl(240, 5%, 91%)
+ */
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    background: linear-gradient(to bottom, hsl(273, 75%, 66%),hsl(240, 73%, 65%)
+    );
+ }
+
+ .container{
+    background-color: white;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    padding: 30px; 
+    margin:100px 30px 100px;
+    border-radius: 15px;
+     background-position: 0% 0%;
+     background-size: contain;
+     transform: translateY(60px);
+ }
+
+ .img{
+    background-image: url("./faq-accordion-card-main/images/bg-pattern-mobile.svg") no-repeat;
+    background-size: contain;
+    background-position:0% -10%;
+    transform: translateY(35px);
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+    margin-top: -180px;
+ }
+
+ .img-1{
+    width: 100px;
+    margin-left: 0px;
+    height: 100px;
+    z-index: 1000;
+    margin-top: 27px;
+ }
+
+ .img-2{
+    width: 100%;
+    display: block;
+    margin-left: -95px;
+    margin-top: -10px;
+ } 
+
+.items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.faq{
+    color:hsl(238, 29%, 16%) ;
+    font-weight: 700;
+    margin: 020px 0 40px;
+    transform: translateY(35px);
+}
+
+.dropdowns{
+    border-bottom: 1px solid  hsl(240, 5%, 91%);
+    padding-bottom: 15px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+
+
+.dropdowns p{
+    color: hsl(240, 6%, 50%);
+}
+
+.dropdown-1-item  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: hsl(238, 29%, 16%) ;
+    font-weight: 700;
+}
+
+.dropdown-1-item p{
+    color: hsl(238, 29%, 16%);
+}
+
+.content {
+    font-size: 12px;
+    color: hsl(240, 6%, 50%);
+    text-align: left;
+    font-weight: 400;margin: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.dropdowns.active .content{
+    max-height: 300px;
+    animation: fade .5s ease;
+}
+
+.dropdowns.dropdowns.active .fa{
+    transform: rotate(180deg);
+}
+
+.dropdown-1-item p:hover{
+    color: hsl(14, 88%, 65%);
+}
+
+.dropdown-1-item p:focus{
+    color: hsl(238, 29%, 16%);
+}
+
+.fa{
+    color: hsl(14, 88%, 65%);
+    font-size: 12px;
+    border-left: 10px;
+    transition: transform .5s ease;
+}
+
+@keyframes fade {
+    from{
+        opacity:0 ;
+        transform: translate(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (min-width:768px){
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        background-image: url("./faq-accordion-card-main/images/bg-pattern-desktop.svg") no-repeat;
+        background-position: 800% 70%;
+        padding: 0 90px 0 50px;
+        transform: initial;
+    }
+
+    .img{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 55%;
+        background-image: url("./faq-accordion-card-main/images/illustration-woman-online-desktop.svg") no-repeat;
+        background-position: 1260% 43%;
+    }
+
+    .img-1{
+        width: 100px;
+        margin-left: -100px;
+        height: 100px;
+        z-index: 1000;
+        margin-top: 80px;
+       transform: scale(1.8) translate(-7px, 26px);
+    }
+
+    .img-2{
+            width: 100%;
+            display: block;
+            margin-left: -105px;
+            margin-top: 10px;
+            transform: translateY(20px);
+    }
+
+    .faq{
+        transform: initial;
+        text-align: left;
+    }
+
+}
